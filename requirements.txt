@@ -1,0 +1,4 @@
+sympy>=1.12
+ipython>=8.16
+numpy>=2.0
+matplotlib>=3.8

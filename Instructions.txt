@@ -1,0 +1,8 @@
+--Permisos (solo si es necesario)
+(Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& "c:\Users\ccent\Documents\Universidad\Para Enny\Brazo_robot\.venv\Scripts\Activate.ps1")
+
+
+--Cómo crear e inicializar el venv (necesario para evitar errores)
+python -m pip install -r requirements.txt
+py -3.13 -m venv .venv   
+.\.venv\Scripts\activate      
