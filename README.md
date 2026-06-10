@@ -7,12 +7,11 @@ Interfaz gráfica en Tkinter para calcular y enviar datos de cinemática de un m
 
 Estructura del repositorio
 -------------------------
-- main.py — Punto de entrada. Conecta GUI, controlador ESP y (opcional) módulo de cinemática.
+- main.py — Punto de entrada. Conecta GUI, controlador ESP y módulo de cinemática.
 - requirements.txt — Dependencias Python (SymPy, IPython, NumPy, Matplotlib).
-- Instructions.txt — Archivo de instrucciones adicionales (se mantiene tal cual).
+- Instructions.txt — Archivo de instrucciones adicionales.
 - gui/
   - interfaz.py — Interfaz Tkinter (entradas, salidas, y áreas de respuesta). No debe realizar cálculos, expone callbacks.
-  - test.py — utilidades de prueba (si procede).
 - hardware/
   - protocolo.py — Formato de mensaje JSON y utilidades de serialización/parsing.
   - serial_controller.py — Cliente TCP `Esp32TcpClient` que envía/recibe paquetes al ESP32.
@@ -40,9 +39,12 @@ Por defecto el `main.py` intenta conectar al ESP32 en `192.168.4.1:12345`. Puede
 
 ```powershell
 python main.py --host 192.168.4.1 --port 12345
-# o
+```
+o
+```powershell
 python main.py
 ```
+
 
 Flujo de datos (arquitectura)
 ----------------------------
@@ -80,21 +82,3 @@ Cómo reactivar `robot/cinematica.py`
 -----------------------------------
 1. Implementa las funciones `inverse_kinematics` y `direct_kinematics` en `robot/cinematica.py`.
 2. En `main.py`, quita el comentario de la sección con la importación condicional (la guía está comentada dentro del archivo).
-
-Archivos modificados/creados por esta entrega
--------------------------------------------
-- [README.md](README.md) (este archivo)
-- [main.py](main.py) (coordinador)
-- [gui/interfaz.py](gui/interfaz.py) (refactorizado para callbacks)
-- [hardware/protocolo.py](hardware/protocolo.py)
-- [hardware/serial_controller.py](hardware/serial_controller.py)
-- [requirements.txt](requirements.txt) (ya presente)
-- [Instructions.txt](Instructions.txt) (sin cambios)
-
-Contacto rápido
----------------
-Si quieres, puedo:
-- Añadir stubs de prueba para `robot/cinematica.py` que devuelvan valores fijos.
-- Hacer el envío al ESP32 en un hilo para evitar bloquear la GUI.
-- Añadir un `README` en español más corto o un `USAGE.md` separado.
-
