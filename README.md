@@ -21,7 +21,7 @@ Estructura del repositorio
 
 Requisitos
 ----------
-- Python 3.13 (el proyecto fue probado con 3.13 en Windows).
+- Python 3.12 (el proyecto fue probado con 3.12 en Windows).
 - Tcl/Tk instalado (para `tkinter`). En Windows suele instalarse con Python estándar.
 
 Instalación rápida (Windows)
